@@ -12,10 +12,10 @@ import { DemoShell } from "./shell/DemoShell";
 
 const seedDemoTenant = () => {
   const tenant = {
-    customerCode: "dukehealth",
+    customerCode: "onehealth",
     refNum: "demo",
-    tenantName: "Duke Health",
-    customerName: "Duke Health",
+    tenantName: "One Health",
+    customerName: "One Health",
   };
   localStorage.setItem("selectedTenant", JSON.stringify(tenant));
   sessionStorage.setItem(

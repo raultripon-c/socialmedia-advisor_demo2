@@ -78,7 +78,7 @@ export const DemoShell: React.FC = () => {
             <strong className="demo-topbar__app">Social Media Advisor</strong>
           </div>
           <div className="demo-topbar__right">
-            <span className="demo-topbar__tenant">Duke Health</span>
+            <span className="demo-topbar__tenant">One Health</span>
             <button type="button" className="demo-topbar__avatar" onClick={deadClick} tabIndex={-1} aria-disabled="true">
               RT
             </button>
