@@ -4,6 +4,7 @@ import { getRefNum } from "../campaignStudioData";
 import {
   advisorBoardAdapter,
   buildAdvisorCampaignHandoff,
+  culturalCalendarEvents,
   getFilterOptions,
   toIsoDate,
 } from "./contentBoardData";
@@ -121,10 +122,7 @@ export const ContentBoardPage: React.FC = () => {
     });
   }, [cards, filters]);
 
-  const reviewCount = useMemo(
-    () => cards.filter((card) => card.status === "to_be_reviewed" || card.status === "ready_for_campaign").length,
-    [cards],
-  );
+  const culturalDaysCount = culturalCalendarEvents.length;
 
   const shiftFocus = (direction: -1 | 1) => {
     setFocusDate((current) => {
@@ -239,8 +237,10 @@ export const ContentBoardPage: React.FC = () => {
           <div className="cb-toolbar__title-block">
             <div className="cb-toolbar__title-row">
               <h2>Content Board</h2>
-              {reviewCount > 0 && (
-                <span className="cb-toolbar__badge">{reviewCount} to review</span>
+              {culturalDaysCount > 0 && (
+                <span className="cb-toolbar__badge">
+                  {culturalDaysCount} cultural day{culturalDaysCount === 1 ? "" : "s"}
+                </span>
               )}
             </div>
             <p>Review AI drafts against cultural anchors, media signals, and employee stories.</p>
